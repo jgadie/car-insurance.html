@@ -1,13 +1,12 @@
 $(document).ready(function() {
-  $("#blanks form").submit(function(event) {
-    $(".person1").append("blah blah");
-    $(".person2").append("blah blah");
-    $(".animal").append("blah blah");
-    $(".exclamation").append("blah blah");
-    $(".verb").append("blah blah");
-    $(".noun").append("blah blah");
+  $("form#insurance").submit(function(event) {
+    var age = parseInt($("input#age").val());
+    var gender = $("select#gender").val();
 
-    $("#story").show();
+    var quote = (100 - age) * 3;
+
+    $("#rate").empty().append(quote);
+    $("#quote").show();
 
     event.preventDefault();
   });
